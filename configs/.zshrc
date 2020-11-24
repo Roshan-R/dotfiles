@@ -1,30 +1,32 @@
-alias zshrc="vim ~/.zshrc"
-alias vimrc="vim ~/.vimrc"
-alias i3cf="vim ~/.config/i3/config"
-alias config="vim ~/.config"
+alias zshrc="nvim ~/.zshrc"
+alias vimrc="nvim ~/.vimrc"
+alias i3cf="nvim ~/.config/i3/config"
+alias config="nvim ~/.config"
 alias ceekyoo="cd /home/rosh/Dev/django/CeekYoo"
 alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
 alias copy="xclip -selection clipboard -i"
 alias gitc="git clone"
 alias vpn="sudo protonvpn connect -f"
 alias ports="sudo lsof -i -P -n | grep LISTEN"
-alias batt="cat /sys/class/power_supply/BAT1/capacity"
+alias batt="cat /sys/class/power_supply/BAT0/capacity"
 alias wgets="wget --quiet --show-progress"
-alias tt="devour zathura /home/rosh/Documents/college/Time_table.pdf"
-alias mc='mpv "/home/rosh/Music/YouTube/$(ls /home/rosh/Music/YouTube/ | fzf --preview="tree -L 1 {}" )"'
+alias tt="mupdf /home/rosh/Documents/college/Time_table.pdf"
+alias mc='mpv "/home/rosh/Music/$(ls /home/rosh/Music/ | fzf --preview="tree -L 1 {}" )"'
 alias yt='youtube-dl --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s"'
 alias zz='devour zathura'
 alias lofi='devour /home/rosh/Desktop/lofi'
+alias scan='sudo arp-scan 192.168.1.0/24 --interface=wlo1'
+alias todo='nvim ~/todo.md'
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/rosh/.oh-my-zsh"
-export PATH=$PATH:/home/rosh/.gem/ruby/2.7.0/bin
-export EDITOR=vim
+export PATH=$PATH:/root/.gem/ruby/2.7.0/bin
+export EDITOR=nvim
+export BROWSER=firefox
 export PATH=$PATH:/home/rosh/.cargo/bin
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 export _JAVA_OPTIONS='-Dswing.aatext=true'
 export _JAVA_AWT_WM_NONREPARENTING=1
-
 
 #Theme
 ZSH_THEME="robbyrussell"
@@ -134,20 +136,7 @@ cd_with_fzf() {
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/rosh/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/rosh/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/rosh/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/rosh/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
 export LC_CTYPE="en_IN.utf8"
 set encoding="utf-8"
+
+[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
