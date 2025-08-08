@@ -6,10 +6,11 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 export PATH="$PATH:/home/$USER/bin"
 export PATH="$PATH:/home/$USER/go/bin"
+export PATH="$PATH:/home/$USER/.local/bin"
 export EDITOR=nvim
 export QT_QPA_PLATFORMTHEME=qt6ct
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=value'
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 
 source $ZSH/oh-my-zsh.sh
 
