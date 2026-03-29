@@ -20,7 +20,7 @@
 #: <https://sw.kovidgoyal.net/kitty/kittens/choose-fonts/#font-spec-
 #: syntax>.
 
-font_size 15.0
+font_size 13.0
 
 #: Font size (in pts).
 
@@ -1043,7 +1043,7 @@ enable_audio_bell no
 #: Fade the text in inactive windows by the specified amount (a number
 #: between zero and one, with zero being fully faded).
 
-# hide_window_decorations no
+hide_window_decorations yes
 
 #: Hide the window decorations (title-bar and window borders) with
 #: yes. On macOS, titlebar-only and titlebar-and-corners can be used
@@ -1317,7 +1317,7 @@ confirm_os_window_close 0
 
 #: The foreground and background colors.
 
-background_opacity 0.8
+background_opacity 0.9
 
 #: The opacity of the background. A number between zero and one, where
 #: one is opaque and zero is fully transparent. This will only work if
@@ -2787,6 +2787,6 @@ shell_integration disabled
 
 
 # BEGIN_KITTY_THEME
-# Kanagawa_light
+# PaperColor Light
 include current-theme.conf
 # END_KITTY_THEME
