@@ -9,7 +9,9 @@
     "margin-left": 0,
 
     "modules-left": [
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+        "niri/workspaces",
+        "sway/workspaces"
     ],
 
     "modules-center": [
