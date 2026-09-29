@@ -72,7 +72,7 @@
     },
 
     "battery": {
-        "format": "bat {capacity}%",
+        "format": "bat {capacity}% {power}W",
         "interval": 5,
         "states": {
             "warning": 20,
@@ -85,7 +85,7 @@
         "format-wifi" : "wifi {bandwidthDownBits}",
         "format-ethernet": "enth {bandwidthDownBits}",
         "format-disconnected" : "no network",
-        "interval": 5,
+        "interval": 1,
         "on-click": "kitty nmtui",
         "tooltip": false
     },
@@ -96,7 +96,7 @@
         "format": "vol {volume}%",
         "format-bluetooth": "vol {volume}%",
         "nospacing": 1,
-        "on-click": "pavucontrol",
+        "on-click": "flatpak run com.saivert.pwvucontrol",
         "tooltip": false
     },
     "backlight": {
