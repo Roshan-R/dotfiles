@@ -1,48 +1,61 @@
 export ZSH="$HOME/.oh-my-zsh"
-
 ZSH_THEME="wedisagree"
 
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting jq)
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
+
+source $ZSH/oh-my-zsh.sh
 
 export PATH="$PATH:/home/$USER/bin"
 export PATH="$PATH:/home/$USER/go/bin"
 export PATH="$PATH:/home/$USER/.local/bin"
+export PATH="$PATH:/home/$USER/.local/share/pnpm/bin"
+export PATH="/home/$USER/.bun/bin:$PATH"
+
 export EDITOR=nvim
 export QT_QPA_PLATFORMTHEME=qt6ct
-
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
-
-source $ZSH/oh-my-zsh.sh
 
 alias lf='yazi'
 alias open='xdg-open'
 alias nvimrc='nvim ~/.config/nvim/'
 # Lofi girl 
 alias lofi="mpv --no-video https://www.youtube.com/watch\?v\=jfKfPfyJRdk"
+alias gits="git status"
+
 
 todo(){
     nvim ~/todo.txt
+}
+
+spad(){
+    nvim ~/Documents/scrathpad.md
 }
 
 zshrc(){
     nvim ~/.zshrc
 }
 
+ideas(){
+    nvim ~/Documents/ideas.txt
+}
 
-reload(){
-    source ~/.zshrc
-    echo "Reloaded zsh config"
+coreos(){
+    nvim ~/Documents/coreos.md
 }
 
 notes(){
     nvim ~/notes.md
 }
 
+reload(){
+    source ~/.zshrc
+    echo "Reloaded zsh config"
+}
+
 tmp(){
     mkdir -p /tmp/tmp 
     cd /tmp/tmp
 }
-
 
 cosa() {
    env | grep COREOS_ASSEMBLER
@@ -56,7 +69,6 @@ cosa() {
          echo "You should pull the latest version with:" >&2
          echo "podman pull ${COREOS_ASSEMBLER_CONTAINER_LATEST}" >&2
          echo -e "----\e[0m" >&2
-         sleep 10
        fi
    fi
    set -x
